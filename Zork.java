@@ -1,7 +1,10 @@
 import java.util.*;
 
-enum Direction{NORTH, SOUTH, WEST, EAST};
+//enum Direction{NORTH, SOUTH, WEST, EAST};
 enum ColItemType{HEALING, WEAPON, LIGHT, TREASURE};
+enum ItemType{SWITCH, BOX}
+
+class Zork{}
 
 class ZorkObj{
     public String status;
@@ -22,8 +25,20 @@ public class PlayerHas extends Conditional{
 class Room extends ZorkObj{
     private String name;
     private String desc;
-    private Map<Direction,Room> borders;
+    private Room northN;
+    private Room southN;
+    private Room westN;
+    private Room eastN;
+    //private Map<Direction,Room> borders;
     public Room(){this.name=""; this.desc="";}
+    public Room getNorthN(){return northN;}
+    public void setNorthN(Room room){northN=room;}
+    public Room getSouthN(){return southN;}
+    public void setSouthN(Room room){southN=room;}
+    public Room getWestN(){return westN;}
+    public void setWestN(Room room){westN=room;}
+    public Room getEastN(){return eastN;}
+    public void setEastN(Room room){eastN=room;}
 }
 
 class ColItem extends ZorkObj{
