@@ -1,10 +1,25 @@
-import java.util.*;
-
 //enum Direction{NORTH, SOUTH, WEST, EAST};
 enum ColItemType{HEALING, WEAPON, LIGHT, TREASURE};
-enum ItemType{SWITCH, BOX}
+enum ItemType{SWITCH, BOX}my
 
-class Zork{}
+class Zork{
+    private int hp;
+    private Room currentRoom;
+    public int atk;
+    public int def;
+    public ColItem[] inventory=new ColItem[10];
+
+    Zork(Room currentRoom){
+        this.hp=20;
+        this.currentRoom=currentRoom;
+        this.atk=10;
+        this.def=10;
+    }
+
+    public static void main(String args[]){
+
+    }
+}
 
 class ZorkObj{
     public String status;
@@ -52,5 +67,3 @@ class Item extends ZorkObj{
     private ItemType type;
     public Item(){}
 }
-
-class Player{}
